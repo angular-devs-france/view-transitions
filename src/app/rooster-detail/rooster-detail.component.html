@@ -1,0 +1,21 @@
+<section class="container">
+  <section class="description">
+    <article class="header">
+      <h1 class="title">View Transitions with Angular 17</h1>
+      <div class="snippet">
+        <span>npx -p @angular/cli@17.0.0-next.4 ng new my-project</span>
+        <button class="snippet-copy" (click)="copyToClipboard()" title="Copy the Angular project command script to the clipboard">
+          <img ngSrc="assets/images/copy.svg" height="24" width="24" alt="">
+        </button>
+      </div>
+    </article>
+
+    <a routerLink="/" [fragment]="id" title="Navigate to the image list">
+      <img ngSrc="assets/images/arrow.png" height="40" width="100" alt="">
+    </a>
+  </section>
+  <section>
+    <img class="img" [transition]="id" [ngSrc]="'assets/images/roosters/' + id + '.webp'" height="400" width="400" alt="" />
+  </section>
+</section>
+

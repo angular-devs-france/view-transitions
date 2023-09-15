@@ -1,0 +1,21 @@
+<section class="header">
+  <h1 class="title">View Transitions with Angular 17</h1>
+  <p>
+    made by
+    <a class="branding" href="https://twitter.com/@AngularDevsFr" target="_blank">
+      @AngularDevsFr
+    </a>
+  </p>
+
+  <p>
+    inspired by
+    <a class="branding" href="https://twitter.com/@charca" target="_blank">
+      @charca
+    </a>
+  </p>
+</section>
+<a *ngFor="let rooster of roosterList" [routerLink]="['/rooster', rooster]" aria-label="Discover the view transition API in action">
+  <img [id]="rooster" class="img grid-cell_image" [transition]="rooster"
+       [ngSrc]="'assets/images/roosters/' + rooster + '.webp'" height="300" width="300" alt="">
+</a>
+
