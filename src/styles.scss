@@ -7,6 +7,8 @@ body {
 
 .img {
   border-radius: 1rem;
+  height: auto;
+  width: 100%;
 }
 
 ::view-transition-group(*) {

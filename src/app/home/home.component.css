@@ -20,8 +20,6 @@
 
 .grid-cell_image {
   object-fit: cover;
-  height: auto;
-  width: 100%;
 }
 
 .branding {
