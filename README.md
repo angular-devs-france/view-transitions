@@ -1,30 +1,69 @@
-# ViewTransitions
+# View Transitions with Angular 17+
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0-next.4.
+Starting with [Angular 17.0.0-next.4](https://github.com/angular/angular/commit/73e4bf2ed2471faf44a49b591e19a390d5867449), Angular provides a built-in support for the View Transitions API.
 
-## Development server
+## Add View Transitions API
+
+### Update the route configuration
+
+Update your route configuration by adding the `withViewTransition()` provider:
+
+```js
+import {withViewTransitions} from '@angular/router';
+
+provideRouter(routes, withViewTransitions())
+```
+
+### Customize the transition animation
+
+By default, the transitions will operate a quick fade-out/fade-in animation.
+
+You can customize it by using the view transition pair `::view-transition-old` `::view-transition-new` to generate animations on view transitions.
+
+```css
+::view-transition-old(<selector>) {
+  // TODO animation definition for leaving page
+}
+
+::view-transition-new(<selector>) {
+  // TODO animation definition for new page
+}
+```
+
+### Identify target elements
+
+Use the new `view-transition-name` css rule to identify pairs of elements for finer animations.
+A given **view-transition-name** value cannot be used several times on the same page.
+
+```css
+.my-element {
+  view-transition-name: myElement;
+}
+```
+
+This project use a custom directive to do so.
+
+### Allows animation deactivation
+
+Use `prefers-reduced-motion` media query to deactivate view transitions animations if the user wants to.
+
+```css
+@media (prefers-reduced-motion) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+```
+
+## Development
+
+### Install dependencies
+
+Run `npm install` to install dependencies.
+
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-// https://cloudconvert.com/jpg-to-webp
