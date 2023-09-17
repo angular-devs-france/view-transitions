@@ -14,8 +14,8 @@
     </a>
   </p>
 </section>
-<a *ngFor="let rooster of roosterList" [routerLink]="['/rooster', rooster]" aria-label="Discover the view transition API in action">
-  <img [id]="rooster" class="img grid-cell_image" [transition]="rooster"
+<a *ngFor="let rooster of roosterList" [id]="rooster" [routerLink]="['/rooster', rooster]" aria-label="Discover the view transition API in action">
+  <img class="img grid-cell_image" [transition]="rooster"
        [ngSrc]="'assets/images/roosters/' + rooster + '.webp'" height="300" width="300" alt="">
 </a>
 
