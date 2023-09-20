@@ -5,12 +5,6 @@ body {
   background: #dbeafe;
 }
 
-.img {
-  border-radius: 1rem;
-  height: auto;
-  width: 100%;
-}
-
 ::view-transition-group(*) {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.85, 0, 0.15, 1);

@@ -28,6 +28,12 @@
   text-decoration: none;
 }
 
+.img {
+  border-radius: 1rem;
+  height: auto;
+  width: 100%;
+}
+
 @media screen and (min-width: 58em) {
   :host {
     grid-template-columns: repeat(4,25%);

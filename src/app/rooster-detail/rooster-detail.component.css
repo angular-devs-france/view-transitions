@@ -45,6 +45,11 @@
   cursor: pointer;
 }
 
+.img {
+  border-radius: 1rem;
+  height: auto;
+}
+
 @media screen and (min-width: 53em) {
   .container {
     flex-direction: row;
